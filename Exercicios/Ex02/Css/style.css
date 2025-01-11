@@ -1,0 +1,49 @@
+@charset  "UTF-8";
+
+@font-face {
+    font-family: 'manga';
+    src: url(../Fonts/mangat.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Super-squad';
+    src: url(../fonts/Super\ Squad.otf);
+    font-weight: normal;
+}
+:root{
+    --super-squad: 'super-squad', cursive;
+    --Manga: 'manga', cursive;
+}
+
+body {
+    background-color: rgb(107, 107, 241);
+    color: white;
+    font: normal 15pt var(--super-squad);
+}
+header{
+    text-align: center;
+}
+section{
+    background-color: white;
+    color: #000;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px #00000027;
+    width: 500px;   
+}
+div{
+    text-align: center;
+    padding: 5px;
+}
+img{
+    border-radius: 50%;
+    width: 280px;
+    height: 280px;
+    padding: 10px;
+
+}
+footer{
+    text-align: center;
+    font-style: italic;
+}

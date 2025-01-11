@@ -1,0 +1,47 @@
+@charset 'UTF-8';
+
+@font-face {
+    font-family: 'Super-squad';
+    src: url(../fonts/Super\ Squad.otf);
+    font-weight: normal;
+}
+
+:root{
+
+    --super-squad: 'super-squad', cursive;
+}
+
+body{
+    background-color: #030350;
+    font: normal 16pt var(--super-squad);
+    color: white;
+
+}
+header{
+    text-align: center;
+
+}
+section{
+    background-color: white;
+    border-radius: 8px;
+    width: 500px;
+    padding: 6px;
+    margin: auto;
+    color: black;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.493);
+}
+#text{
+    text-align: center;
+    padding: 5px;
+}
+#pic{
+    text-align: center;
+}
+img{
+    border-radius: 50%;
+    margin: auto;
+}
+footer{
+    text-align: center;
+    font-family: var(--super-squad);
+}
