@@ -1,21 +1,20 @@
 function load(){
-    
-    var msg = window.document.getElementById('msg')
-    var img = window.document.getElementsByClassName('imagem')
+    var msg = document.getElementById('msg')
+    var img = document.querySelector('div#image')
     var data = new Date()
     var hora = data.getHours()
     msg.innerHTML = `Agora são ${hora} horas`
     document.body.style.fontWeight = 'bolder'
     if (hora > 0 && hora <= 12) {
-        console.log(`Agora são ${hora} horas`)
-        document.body.style.backgroundColor = 'tomato'
         img.src = 'manha.jpg'
+        document.body.style.backgroundColor = 'tomato'
+        
     } else if (hora > 12 && hora <= 18) {
-        console.log(`agora são ${hora}horas`)
-        document.body.style.backgroundColor = 'chocolate'
         img.src = 'tarde.jpg'
+        document.body.style.backgroundColor = 'chocolate'
+        
     }else{
-        console.log(`agora sao ${hora}horas`)
         img.src = 'noite.jpg'
+        document.body.style.background = 'darkblue'
     }
 }
