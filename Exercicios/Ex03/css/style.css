@@ -1,13 +1,23 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'super-squad';
+    src: url(../fonts/Super\ Squad.otf);
+    font-weight: normal;
+}
+:root{
+    --super-squad: 'super-squad';
+}
+
 body {
-    background-color: rgb(107, 107, 241);
+    background-color: #6b6bf1;
     color: white;
-    font: normal 15pt arial;
+    font: normal 15pt var(--super-squad);
     background-image: url()
 }
 header{
     text-align: center;
+    text-shadow: 1px 1px 1px black;
 }
 section{
     background-color: white;
@@ -16,6 +26,11 @@ section{
     border-radius: 10px;
     box-shadow: 5px 5px 10px #00000027;
     width: 500px;   
+}
+section:hover{
+    background-color: #6b6bf1;
+    color: white;
+    transition-duration: 1s;
 }
 div{
     text-align: center;
@@ -28,7 +43,16 @@ img{
     padding: 10px;
 
 }
+#btn{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    background-color:#6b6bf1;
+    font-family: var(--super-squad);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
 footer{
     text-align: center;
-    font-style: italic;
+    text-shadow: 1px 1px 1px black;
 }

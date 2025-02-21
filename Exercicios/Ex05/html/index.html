@@ -8,18 +8,22 @@
 </head>
 <body>
     <header>
-        <h1>Calculator</h1>
+        <h1>Mayra Reis</h1>
     </header>
     <main>
         <section>
             <div>
-                <p>
-                    <input type="number" name="num" id="fnumber">
-                    <input type="button" value="Calculate" onclick="calculate()">
+                   <p>
+                       Number (1-100): <input type="number" name="num" id="fnumber" min="1" max="100">
+                       <input type="button" value="Add" onclick="add()">
+                   </p>
+                   <select  name="added" id="fadded" size="10"></select>
+                 <p>
+                    <input type="button" value="Finalize" onclick="finalize()"></p>
                 </p>
             </div>
-            <div >
-                <select name="Calc" id="tabs" size="11"></select>
+            <div id="reply">
+
             </div>
         </section>
     </main>

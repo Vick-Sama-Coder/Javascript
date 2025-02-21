@@ -1,18 +1,9 @@
 @charset "UTF-8";
 
-@font-face {
-    font-family: 'super-squad';
-    src: url(../fonts/Super\ Squad.otf);
-    font-weight: normal;
-}
-:root{
-    --super-squad: 'super-squad';
-}
-
 body {
     background-color: rgb(107, 107, 241);
     color: white;
-    font: normal 15pt var(--super-squad);
+    font: normal 15pt arial;
     background-image: url()
 }
 header{
@@ -32,8 +23,7 @@ div{
 }
 select{
     padding: 10px;
-    width: 400px;
-    list-style: none;
+    width: 300px;
 }
 img{
     border-radius: 50%;

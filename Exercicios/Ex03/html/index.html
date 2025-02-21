@@ -4,25 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
-    <title></title>
+    <title>Super counter</title>
 </head>
-<body onload="load()">
+<body>
     <header>
-        <h1></h1>
+        <h1>Super Counter</h1>
     </header>
     <main>
-        <section>
+        <section onmouseenter="int()">
             <div>
-                <p></p>
+                <p>
+                   Start: <input type="number" name="start" id="fstart" min="0">
+                </p>
+                <p>
+                    End: <input type="number" name="end" id="fend" min="0">
+                </p>
+                <p>
+                    Step: <input type="number" name="step" id="fstep" min="0">
+                </p>
+                <p>
+                    <input id="btn" type="button" value="Submit" onclick="count()">
+                </p>
             </div>
-            <div >
-                <img>
+            <div class="reply">
+                
             </div>
         </section>
     </main>
     <footer>
         <p>&copy;VickSama</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
