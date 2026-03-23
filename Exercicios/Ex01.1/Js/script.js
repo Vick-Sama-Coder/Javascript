@@ -2,8 +2,8 @@ function load() {
     var text = window.document.getElementById('text')
     var image = window.document.getElementById('image')
     var date = new Date()
-    //r time = date.getHours()
-    let time = 0
+    var time = date.getHours()
+    //let time = 16
     text.innerHTML = `Agora São ${time} horas.`
     if(time >= 0 && time < 12){
         image.src = '../images/manha.jpg'
