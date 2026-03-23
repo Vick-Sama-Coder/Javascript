@@ -58,6 +58,7 @@ function verify() {
                 img.setAttribute('src', '../images/elderly-f.jpg')
             }else{
                 //Ancestor
+                reply,innerHTML = `You are already Bones <br>`
                 img.setAttribute('src', '../images/ancestor.jpg')
             }
         }

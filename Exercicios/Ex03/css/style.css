@@ -28,9 +28,7 @@ section{
     width: 500px;   
 }
 section:hover{
-    background-color: #6b6bf1;
-    color: white;
-    transition-duration: 1s;
+    cursor: pointer;
 }
 div{
     text-align: center;
