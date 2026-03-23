@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main{
+    display: flex;
+    align-content: center;
+    align-self: center;
+}
+
+#Num{
+    width: 405px;
+    height: 25px;
+}
+td{
+    width: 80px;
+    height: 80px;
+    background-color: rgb(44, 42, 42);
+    color: white;
+    text-align: center;
+
+}
