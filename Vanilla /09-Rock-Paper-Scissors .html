@@ -8,15 +8,23 @@
 <body>
     <h1>Rock Paper Scissors Game</h1>
     <button onclick="  
-    PlayGame('Rock')
+    PlayGame('Rock');
+    showScore();
     ">Rock</button>
     <button onclick=" 
-    PlayGame('Paper')
+    PlayGame('Paper');
+    showScore();
     ">Paper</button>
     <button onclick=" 
-    PlayGame('Scissors') 
+    PlayGame('Scissors');
+    showScore(); 
      ">Scissors</button>
+     <p class="result"></p>
+     <p class="moves"></p>
+     <p class="reset"></p>
+     <p class="score"></p>
      <button onclick="resetScore();">Reset score</button>
+     <a href="10-DOM-projects.html"><button>Home</button></a>
     <script>
         
         let score = JSON.parse(localStorage.getItem('score')) || {
@@ -29,17 +37,28 @@
          let computerMove = ''
          let result = ''
 
+         function resulted(){
+            document.querySelector('p.result').innerHTML = result
+         }
         function PlayGame(PlayerMove){
             pickComputerMove()
+            document.querySelector('.reset').innerHTML = ''
 
             if(PlayerMove === 'Rock'){
 
             if(computerMove === 'Rock'){
                 result = 'Tie'
+                resulted()
+                ourMoves()
             } else if(computerMove === 'Paper'){
                 result = 'You Lose'
+                resulted()
+                ourMoves()
             } else if(computerMove === 'Scissors'){
                 result = 'You Win'
+                resulted()
+                ourMoves()
+                
             }
 
 
@@ -47,20 +66,26 @@
 
             if(computerMove === 'Rock'){
                 result = 'You Win'
+                resulted()
             } else if(computerMove === 'Paper'){
                 result = 'Tie'
+                resulted()
             } else if(computerMove === 'Scissors'){
                 result = 'You Lose'
+                resulted()
             }
 
             } else if(PlayerMove === 'Scissors'){
 
             if(computerMove === 'Rock'){
                 result = 'You Lose'
+                resulted()
             } else if(computerMove === 'Paper'){
                 result = 'You Win'
+                resulted()
             } else if(computerMove === 'Scissors'){
                 result = 'Tie'
+                resulted()
             }
             }
 
@@ -74,13 +99,13 @@
 
             localStorage.setItem('score', JSON.stringify(score))
 
-
-            alert(`You picked ${PlayerMove}. Computer picked ${computerMove}. ${result} \nWins:${score.wins}. Losses:${score.losses}. Ties:${score.ties} `)
-            console.log(score)
-            
-
+            showScore();
+            function ourMoves(){
+            document.querySelector('p.moves').innerHTML = `You picked ${PlayerMove}. Computer picked ${computerMove}`
+            }
+            /*alert(`You picked ${PlayerMove}. Computer picked ${computerMove}. ${result} \nWins:${score.wins}. Losses:${score.losses}. Ties:${score.ties} `)
+            console.log(score)*/
         }
-
         function pickComputerMove() {
             const RandomNumber = Math.random();
 
@@ -97,17 +122,28 @@
             }
         }
 
+        function showScore(){
+            document.querySelector('p.score')
+                .innerHTML = `Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`
+        }
         function resetScore(){
             score = {
             wins: 0,
             losses: 0,
             ties:0
         } 
-    
+            document.querySelector('p.score')
+              .innerHTML = `Wins: ${score.wins}. Losses: ${score.losses}. Ties: ${score.ties}`
+              document.querySelector('.result').innerHTML = ''
+            document.querySelector('.moves').innerHTML = ''
+              document.querySelector('.reset').innerHTML = 'Score was reset'
 
-        alert(`Score Was reset \nWins:${score.wins}. Losses:${score.losses}. Ties:${score.ties}`)
-        console.log(score)
+        
+
+        /*alert(`Score Was reset \nWins:${score.wins}. Losses:${score.losses}. Ties:${score.ties}`)
+        console.log(score)*/
         }
+
     </script>
 </body>
 </html>

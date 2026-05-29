@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Projects</title>
+</head>
+<body>
+    <main>
+        <section>
+            <p>YouTube Subscribe Button</p>
+            <button class="btn" onclick="changeColor()">Subscribe</button>
+        </section>
+
+        <article>
+            <p>Rock Paper Scissors</p>
+            <a href="09-Rock-Paper-Scissors .html"><p>click here</p></a>
+        </article>
+
+        <section>
+            <p>Amazon Shipping Calculator</p>
+            <p>Orders under $40 =+$10 Shipping</p>
+            <p>Orders over $40 = FREE Shipping</p>
+                <input onkeydown="enterKey();" required id="money">
+                <button onclick="calculate();">Calculate</button>
+
+            <p class="txt"></p>
+        </section>
+
+        <a href="10-DOM-projects.html">
+            <p>CSS version of these projects</p>
+        </a>
+    </main>
+
+    <script>
+        let btn = document.querySelector('button.btn')
+        let input = document.querySelector('#money')
+        let text = document.querySelector('p.txt')
+
+
+
+        function changeColor(){
+            if(btn.innerHTML === 'Subscribe'){
+                btn.innerHTML = 'Subscribed'
+                /*  document.querySelector('button.btn').style.border = 'none'
+                document.querySelector('button.btn').style.padding = '10px'*/
+            }else{
+                btn.innerHTML = 'Subscribe'
+            }
+        }
+        function enterKey(){
+            if(event.key === 'Enter'){
+                calculate();
+            }
+        }
+        function calculate(){
+            if(input.value <= 40){
+                text.innerHTML = `$${Number(input.value)}`
+            }else{
+                text.innerHTML = ` $${(Number(input.value) + 10)}`
+                
+            }
+        }
+      
+    </script>
+</body>
+</html>

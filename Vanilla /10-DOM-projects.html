@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Projects</title>
+</head>
+<style>
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+    }
+    .btn{
+        background-color: black;
+        color: rgb(255, 255, 255);
+        padding: 12px;
+        border-radius: 10px;
+        width: 150px;
+        border: none;
+        font-weight: bold;
+        transition-duration: 0.6s;
+        cursor: pointer;
+    }
+    input {
+        padding: 10px;
+    }
+    button.cal{
+        font-weight: bold;
+        border: none;
+        background-color: green;
+        color: white;
+        padding:12px 15px ;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <main>
+        <section>
+            <p>YouTube Subscribe Button</p>
+            <button class="btn" onclick="changeColor()">Subscribe</button>
+        </section>
+
+        <article>
+            <p>Rock Paper Scissors</p>
+            <a href="09-Rock-Paper-Scissors .html"><p>click here</p></a>
+        </article>
+
+        <section>
+            <p>Amazon Shipping Calculator</p>
+            <p>Orders under $40 =+$10 Shipping</p>
+            <p>Orders over $40 = FREE Shipping</p>
+                <input placeholder="Order Cost" onkeydown="enterKey();" required id="money">
+                <button  class="cal" onclick="calculate();">Calculate</button>
+
+            <p class="txt"></p>
+        </section>
+
+        <a href="09-DOM-projects.html">
+            <p>NON CSS version of these projects</p>
+        </a>
+    </main>
+
+    <script>
+        let btn = document.querySelector('button.btn')
+        let input = document.querySelector('#money')
+        let text = document.querySelector('p.txt')
+
+
+
+        function changeColor(){
+            if(btn.innerHTML === 'Subscribe'){
+                btn.innerHTML = 'Subscribed'
+                btn.style.backgroundColor = 'lightgray'
+                btn.style.color = 'black'
+                /*  document.querySelector('button.btn').style.border = 'none'
+                document.querySelector('button.btn').style.padding = '10px'*/
+            }else{
+                btn.innerHTML = 'Subscribe'
+                btn.style.backgroundColor = 'black'
+                btn.style.color = 'white'
+            }
+        }
+        function enterKey(){
+            if(event.key === 'Enter'){
+                calculate();
+            }
+        }
+        function calculate(){
+            if(input.value <= 40){
+                text.innerHTML = `$${Number(input.value)}`
+            }else{
+                text.innerHTML = ` $${(Number(input.value) + 10)}`
+                
+            }
+        }
+      
+    </script>
+</body>
+</html>

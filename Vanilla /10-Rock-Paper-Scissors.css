@@ -1,0 +1,32 @@
+ body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: black;
+        color: white;
+    }
+    img{
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+
+    }
+    .hand{
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid white;
+        border-radius:50% ;
+        background-color: transparent;
+    }
+    .result{
+        font-weight: bold;
+        font-size: x-large;
+    }
+    button{
+        border: none;
+        background-color: white;
+        font-weight: bold;
+        padding: 10px 15px;
+    }
+
+    .moves{
+        margin: 40px 0px;
+    }
