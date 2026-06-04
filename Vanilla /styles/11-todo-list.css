@@ -1,0 +1,31 @@
+body{
+    font-family:Arial, Helvetica, sans-serif ;
+    text-align: center;
+}
+input{
+    padding: 10px;
+}
+button{
+    border: none;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    align-items: stretch;
+
+}
+.container{
+    padding-bottom: 10px;
+.content, .container{
+    display: grid;
+    grid-template-columns: 200px 150px 100px ;
+    gap: 10px;
+    align-items: center;
+    
+
+}
+.js-delete{
+    padding: 10px;
+    background-color: darkred;
+}
