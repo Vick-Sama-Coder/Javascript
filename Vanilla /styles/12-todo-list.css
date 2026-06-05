@@ -22,11 +22,14 @@ button{
     display: grid;
     grid-template-columns: 200px 150px 100px ;
     gap: 10px;
+}
+.content{
     align-items: center;
-    
-
 }
 .js-delete{
     padding: 10px;
     background-color: darkred;
+}
+.add-to-do{
+
 }
