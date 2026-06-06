@@ -1,16 +1,12 @@
 const todoList = [/*{name:'', dueDate:'' }*/ ];
 renderTodoList();
 
-document.querySelector('.js-add-to-do').addEventListener('click', () => addTodo());
-document.querySelector('.js-input-name').addEventListener('keydown', event => {
+    document.querySelector('.js-add-to-do').addEventListener('click', () => addTodo());
+    document.querySelector('.js-input-name').addEventListener('keydown', event => {
     console.log(event.key)
     if(event.key === 'Enter'){
         addTodo();
     }
-})
-document.querySelector('.js-delete').addEventListener('click', () => {
-            todoList.splice(index, 1);
-            renderTodoList();
 })
 
 function renderTodoList(){
@@ -25,6 +21,12 @@ function renderTodoList(){
         `
         todoListHtml += html
         
+        document.querySelectorAll('.js-delete').forEach((deleteButton, index) => {
+            deleteButton.querySelectorAll('.js-delete').addEventListener('click', () => {
+            todoList.splice(index, 1);
+            renderTodoList();
+})
+        })
 
         document.querySelector('div.content').innerHTML= todoListHtml
     })
