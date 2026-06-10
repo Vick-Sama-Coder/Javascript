@@ -1,15 +1,18 @@
-import { cart, addToCart } from "../data/cart.js";
+import { cart, addToCart, saveToStorage } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { fixCurrency } from "./Utils/money.js";
 let productsHTML = '';
 
- function updateCartQuantity(){
+export function updateCartQuantity(){
+  
    let cartQuantity = 0;
-
     cart.forEach((item) => {
         cartQuantity += item.quantity
     });
+
  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+ 
+
 }
 function loadProducts(){
 products.forEach(product => {
