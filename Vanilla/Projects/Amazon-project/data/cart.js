@@ -1,3 +1,6 @@
+
+let matchedItem;
+
 export const cart = [{
     productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     quantity: 0
@@ -12,6 +15,7 @@ export function addToCart(productId){
     cart.forEach((item) => {
         if(productId === item.productId){
             matchingItem = item 
+            
         }
     });
     if(matchingItem){
@@ -22,5 +26,21 @@ export function addToCart(productId){
             quantity: 1
         });
     };
+
+}
+
+export function removeFromCart(productId){
+          cart.forEach((item, index) => {
+        if(productId === item.productId){
+            matchedItem = item
+            console.log(matchedItem)
+        }
+        if(matchedItem){
+          cart.splice(index, 1)
+          document.querySelector(`.js-cart-item-${productId}`).remove()
+        }
+        console.log(cart)
+      });
+
 
 }
