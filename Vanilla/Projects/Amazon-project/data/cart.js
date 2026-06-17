@@ -1,4 +1,4 @@
-
+import { deliveryOptions } from "./deliveryOptions.js";
 let matchedItem;
 
 export const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -19,10 +19,14 @@ export function addToCart(productId){
     if(matchingItem){
         matchingItem.quantity += 1
     }else{
-        cart.push({
+        deliveryOptions.forEach((item, index) => {
+            cart.push({
             productId,
-            quantity: 1
+            quantity: 1,
+            deliveryOptionsId: item.id
         });
+        })
+
     };
     saveToStorage();
 }
