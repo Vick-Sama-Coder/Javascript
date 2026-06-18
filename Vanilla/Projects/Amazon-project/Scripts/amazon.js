@@ -4,14 +4,13 @@ import { fixCurrency } from "./Utils/money.js";
 let productsHTML = '';
 
 export function updateCartQuantity(){
-  
+  saveToStorage();
    let cartQuantity = 0;
     cart.forEach((item) => {
         cartQuantity += item.quantity
     });
-
  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
- 
+ saveToStorage();
 
 }
 function loadProducts(){
