@@ -1,10 +1,16 @@
-function Cart(localStorageKey){
-    const cart = {
-        cart: JSON.parse(localStorage.getItem(localStorageKey)) || [],
-        saveToStorage(){
-        localStorage.setItem(localStorageKey, JSON.stringify(cart))
-        },
-        addToCart(productId){
+class Cart {
+    localStorageKey = undefined;
+    cart = JSON.parse(localStorage.getItem(this.localStorageKey)) || [];
+    
+    constructor(localStorageKey){
+        this.localStorageKey = localStorageKey
+    }
+
+    saveToStorage(){
+        localStorage.setItem(this.localStorageKey, JSON.stringify(cart))
+    }
+
+    addToCart(productId){
         let matchingItem;
 
         cart.forEach((item) => {
@@ -24,8 +30,9 @@ function Cart(localStorageKey){
 
         };
         cart.saveToStorage();
-        },
-        removeFromCart(productId){
+        }
+
+    removeFromCart(productId){
         let matchedItem;
         cart.forEach((item, index) => {
             if(productId === item.productId){
@@ -40,8 +47,9 @@ function Cart(localStorageKey){
         });
 
         cart.saveToStorage();
-        },
-        updateDeliveryDate(productId, deliveryOptionId){
+    }
+
+    updateDeliveryDate(productId, deliveryOptionId){
         let matchingItem;
 
         cart.forEach((item) => {
@@ -59,14 +67,17 @@ function Cart(localStorageKey){
         
 
         }
-    };
 
-    return cart
 }
 
-const cartOop = Cart('cart-oop')
-const businessCart = Cart('business-cart')
-//console.log(cartOop)
-//console.log(businessCart)
+const cartOop = new Cart('cart-oop')
+const businessCart = new Cart('business-cart')
+
+
+
+
+
+console.log(cartOop)
+console.log(businessCart)
 
 
