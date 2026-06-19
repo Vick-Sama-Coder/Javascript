@@ -1,4 +1,4 @@
-import { fixCurrency } from "../../Scripts/Utils/money.js"
+import { fixCurrency } from "../../../Scripts/Utils/money.js"
 
 
 describe('test suite :  fix Currency', () =>{
