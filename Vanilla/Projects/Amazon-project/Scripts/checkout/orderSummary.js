@@ -1,14 +1,16 @@
 import { cart, removeFromCart, updateDeliveryDate } from "../../data/cart.js";
-import { products } from "../../data/products.js";
+import { products, getProduct } from "../../data/products.js";
 import { fixCurrency } from "../Utils/money.js";
-import { deliveryOptions } from "../../data/deliveryOptions.js";
+import { deliveryOptions, getDeliveryOption } from "../../data/deliveryOptions.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 
 const today = dayjs();
 
 
 
-export function renderOrderSummary(){   
+export function renderOrderSummary(){  
+  renderPaymentSummary() 
     let cartSummaryHTML = '';
 
     console.log(today.format('DD MMMM YYYY'))
@@ -18,28 +20,20 @@ export function renderOrderSummary(){
 
 
     function renderCart(){
-      let deliveryOption = null;
     cart.forEach((cartItem) => {
     const productId = cartItem.productId;
 
-    let matchingProduct;
+    const matchingProduct = getProduct(productId)
 
-    products.forEach(product => {
-        if(productId === product.id){
-            matchingProduct = product
-        }
-    });
+
 
     const deliveryOptionsId = cartItem.deliveryOptionsId;
 
     console.log('renderizando', deliveryOptionsId)
 
-    deliveryOptions.forEach(Option =>{
-      if(Option.id === deliveryOptionsId){
-        deliveryOption = Option
-      }
-      
-    });
+
+    const deliveryOption = getDeliveryOption(deliveryOptionsId);
+
     const deliveryDate = today.add(deliveryOption.deliveryDay, 'days');
     const formatedDay = deliveryDate.format('dddd, MMMM D');
 
@@ -139,6 +133,8 @@ export function renderOrderSummary(){
       button.addEventListener('click', () => {
         const productId = button.dataset.productId;
         removeFromCart(productId);
+        renderPaymentSummary()
+
       });
     });
 

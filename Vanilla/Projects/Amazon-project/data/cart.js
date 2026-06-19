@@ -30,7 +30,8 @@ export function addToCart(productId){
 }
 
 export function removeFromCart(productId){
-          cart.forEach((item, index) => {
+    
+    cart.forEach((item, index) => {
         if(productId === item.productId){
             matchedItem = item
             console.log(matchedItem)
@@ -40,7 +41,7 @@ export function removeFromCart(productId){
           document.querySelector(`.js-cart-item-${productId}`).remove()
         }
         console.log(cart)
-      });
+    });
 
       saveToStorage();
 }

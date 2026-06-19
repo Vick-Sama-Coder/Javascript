@@ -1,4 +1,4 @@
 export function fixCurrency(priceCents){
-   const totalPrice =  (priceCents / 100).toFixed(2)
+   const totalPrice =  (Math.round(priceCents) / 100).toFixed(2)
      return totalPrice
 };
