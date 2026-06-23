@@ -1,20 +1,21 @@
 import { cart, addToCart, saveToStorage } from "../data/cart.js";
 import { products } from "../data/products.js";
-import { fixCurrency } from "./Utils/money.js";
 let productsHTML = '';
 
 export function updateCartQuantity(){
-  saveToStorage();
+  JSON.parse(localStorage.getItem('quanty'))
    let cartQuantity = 0;
     cart.forEach((item) => {
         cartQuantity += item.quantity
     });
- document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
- saveToStorage();
+    saveToStorage();
+ localStorage.setItem('quanty', JSON.stringify(document.querySelector('.js-cart-quantity').innerHTML = cartQuantity))
+    
 
 }
 function loadProducts(){
 products.forEach(product => {
+  updateCartQuantity()
    productsHTML += `<div class="product-container">
           <div class="product-image-container">
             <img class="product-image"

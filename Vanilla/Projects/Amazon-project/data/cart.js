@@ -1,6 +1,3 @@
-import { deliveryOptions } from "./deliveryOptions.js";
-let matchedItem;
-
 export const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 export function saveToStorage(){
@@ -30,7 +27,7 @@ export function addToCart(productId){
 }
 
 export function removeFromCart(productId){
-    
+    let matchedItem;
     cart.forEach((item, index) => {
         if(productId === item.productId){
             matchedItem = item
@@ -38,9 +35,7 @@ export function removeFromCart(productId){
         }
         if(matchedItem){
           cart.splice(index, 1)
-          document.querySelector(`.js-cart-item-${productId}`).remove()
         }
-        console.log(cart)
     });
 
       saveToStorage();

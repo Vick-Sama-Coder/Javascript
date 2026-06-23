@@ -6,7 +6,9 @@ import { renderPaymentSummary } from "./paymentSummary.js";
 
 
 const today = dayjs();
-
+export function itensQuantity(){
+    document.querySelector('.js-checkout').innerHTML = cart.length
+  }
 
 
 export function renderOrderSummary(){  
@@ -17,7 +19,6 @@ export function renderOrderSummary(){
 
     renderCart();
     
-
 
     function renderCart(){
     cart.forEach((cartItem) => {
@@ -39,7 +40,7 @@ export function renderOrderSummary(){
 
 
 
-
+    itensQuantity();
 
     cartSummaryHTML += `<div class="cart-item-container
     js-cart-item-${matchingProduct.id}
@@ -128,12 +129,17 @@ export function renderOrderSummary(){
 
 
 
-    document.querySelectorAll('.js-delete-link')
-    .forEach((button, index) => {
+    document.querySelectorAll('.js-delete-link').forEach((button, index) => {
       button.addEventListener('click', () => {
         const productId = button.dataset.productId;
         removeFromCart(productId);
         renderPaymentSummary()
+        itensQuantity();
+        const container = document.querySelector(`.js-cart-item-${productId}`)
+        container.remove();
+
+
+
 
       });
     });
