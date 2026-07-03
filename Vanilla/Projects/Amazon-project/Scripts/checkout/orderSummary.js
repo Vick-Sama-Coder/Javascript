@@ -129,14 +129,14 @@ export function renderOrderSummary(){
 
 
 
-    document.querySelectorAll('.js-delete-link').forEach((button, index) => {
+    document.querySelectorAll('.js-delete-link').forEach(button => {
       button.addEventListener('click', () => {
         const productId = button.dataset.productId;
         removeFromCart(productId);
-        renderPaymentSummary()
-        itensQuantity();
         const container = document.querySelector(`.js-cart-item-${productId}`)
         container.remove();
+        renderPaymentSummary()
+        itensQuantity();
 
 
 

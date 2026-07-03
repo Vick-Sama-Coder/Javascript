@@ -11,7 +11,6 @@ export function updateCartQuantity(){
     saveToStorage();
  localStorage.setItem('quanty', JSON.stringify(document.querySelector('.js-cart-quantity').innerHTML = cartQuantity))
     
-
 }
 function loadProducts(){
 products.forEach(product => {
