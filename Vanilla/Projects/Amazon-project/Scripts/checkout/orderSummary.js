@@ -83,6 +83,7 @@ export function renderOrderSummary(){
             </div>
           </div>`;
     });
+    
     document.querySelector('.js-order-summary')
     .innerHTML = cartSummaryHTML;
 

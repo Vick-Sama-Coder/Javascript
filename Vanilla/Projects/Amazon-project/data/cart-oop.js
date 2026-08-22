@@ -7,7 +7,9 @@ function Cart(localStorageKey){
         addToCart(productId){
         let matchingItem;
 
-        cart.forEach((item) => {
+        this.matchProduct(){
+
+        }this.cart.forEach((item) => {
             if(productId === item.productId){
                 matchingItem = item 
                 
